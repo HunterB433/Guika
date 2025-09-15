@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://gewaiuadmha6"]
+
+[ext_resource type="Script" uid="uid://b8auxky3qxpw" path="res://Suika/Scripts/Fruit.gd" id="1_fcd52"]
+[ext_resource type="Texture2D" uid="uid://dl7o7a2a7gfbb" path="res://Suika/Resources/Gurcles/Gurcle1.png" id="2_fcd52"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yd1tv"]
+radius = 42.0119
+
+[node name="RBF1" type="RigidBody2D"]
+script = ExtResource("1_fcd52")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("2_fcd52")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_yd1tv")

@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4apm2n8mjr3r"]
+
+[ext_resource type="Script" uid="uid://dvrvmo18sj5qy" path="res://Suika/Scripts/Fruit.gd" id="1_3gfgf"]
+[ext_resource type="Texture2D" uid="uid://claj2lcmyt6xe" path="res://Suika/Resources/Gurcles/Gurcle9.png" id="2_3gfgf"]
+[ext_resource type="AudioStream" uid="uid://87msa88aly5f" path="res://Suika/Resources/Sounds/Pop.wav" id="3_3nw0g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3gfgf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3pxtv"]
+
+[node name="RBF1" type="RigidBody2D"]
+scale = Vector2(0.955, 0.955)
+script = ExtResource("1_3gfgf")
+fruit_type = 9
+score_value = 34
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("2_3gfgf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(12, 12)
+shape = SubResource("CircleShape2D_3gfgf")
+
+[node name="MergeArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MergeArea"]
+scale = Vector2(14, 14)
+shape = SubResource("CircleShape2D_3pxtv")
+
+[node name="Fuse" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_3nw0g")
+volume_db = -20.0
+
+[connection signal="input_event" from="MergeArea" to="." method="_on_merge_area_input_event"]

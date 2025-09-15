@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs0bv7w1q5uio"]
+
+[ext_resource type="Script" uid="uid://brw1vx3g8mtud" path="res://Suika/Scripts/button.gd" id="1_cs0lr"]
+
+[sub_resource type="Theme" id="Theme_cs0lr"]
+
+[node name="Root" type="Node"]
+
+[node name="SwitchScene" type="Node" parent="."]
+
+[node name="HowTo" type="Button" parent="SwitchScene"]
+offset_left = 108.0
+offset_top = 58.0
+offset_right = 211.0
+offset_bottom = 89.0
+scale = Vector2(8.92, 7.56)
+text = "How To Play
+"
+script = ExtResource("1_cs0lr")
+
+[node name="SwitchScene2" type="Node" parent="."]
+
+[node name="main" type="Button" parent="SwitchScene2"]
+offset_left = 120.0
+offset_top = 328.0
+offset_right = 223.0
+offset_bottom = 359.0
+scale = Vector2(8.92, 7.56)
+theme = SubResource("Theme_cs0lr")
+text = "Play
+"
+script = ExtResource("1_cs0lr")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="SwitchScene/HowTo" to="SwitchScene/HowTo" method="_on_pressed"]
+[connection signal="pressed" from="SwitchScene2/main" to="SwitchScene2/main" method="_on_pressed"]

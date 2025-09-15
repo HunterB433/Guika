@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://bt2nqw76l3qr0"]
+
+[ext_resource type="Script" uid="uid://brw1vx3g8mtud" path="res://Suika/Scripts/button.gd" id="1_uucah"]
+[ext_resource type="Texture2D" uid="uid://dpdk3neaepjsf" path="res://Suika/Resources/GuyPeek.jpg" id="1_vweov"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vweov"]
+font_size = 40
+
+[node name="Lose" type="Node2D"]
+
+[node name="GuyPeek" type="Sprite2D" parent="."]
+position = Vector2(747, 309)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_vweov")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "The AI Beat 
+You! You Lose!"
+label_settings = SubResource("LabelSettings_vweov")
+
+[node name="HomeScreen" type="Button" parent="."]
+offset_left = 4.0
+offset_top = 282.0
+offset_right = 496.0
+offset_bottom = 444.0
+scale = Vector2(0.685562, 1.01354)
+theme_override_font_sizes/font_size = 50
+action_mode = 0
+text = "The AI Beat 
+You! You Lose!"
+script = ExtResource("1_uucah")
+
+[connection signal="pressed" from="HomeScreen" to="HomeScreen" method="_on_pressed"]
