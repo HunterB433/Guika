@@ -1,14 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://wodutyhhai7d"]
+[gd_scene load_steps=23 format=3 uid="uid://wodutyhhai7d"]
 
 [ext_resource type="Texture2D" uid="uid://by61mejn5t8lm" path="res://Suika/Resources/Sprite-0001-Sheet.png" id="1_4oo1y"]
 [ext_resource type="Script" uid="uid://brw1vx3g8mtud" path="res://Suika/Scripts/button.gd" id="2_y1qup"]
-[ext_resource type="PackedScene" uid="uid://cn6o4yrv3xksj" path="res://Suika/Scenes/AIfruit1.tscn" id="3_ycddk"]
 [ext_resource type="PackedScene" uid="uid://cvpfi0hwj5g1n" path="res://Suika/Scenes/AIfruit2.tscn" id="4_snou5"]
+[ext_resource type="Texture2D" uid="uid://cbigbusbomken" path="res://Suika/Resources/Sprite-0004.png" id="5_2fix7"]
 [ext_resource type="PackedScene" uid="uid://bjww7io2s0r5x" path="res://Suika/Scenes/AIfruit3.tscn" id="5_xv85t"]
-[ext_resource type="PackedScene" uid="uid://ciyacfsuucphb" path="res://Suika/Scenes/AIfruit4.tscn" id="6_1wrt6"]
-[ext_resource type="PackedScene" uid="uid://bgrejgwvct3uw" path="res://Suika/Scenes/AIfruit6.tscn" id="7_wjrpe"]
-[ext_resource type="PackedScene" uid="uid://78pp4iv4o0n4" path="res://Suika/Scenes/AIfruit7.tscn" id="8_dauds"]
-[ext_resource type="PackedScene" uid="uid://cigfxi005cren" path="res://Suika/Scenes/AIfruit9.tscn" id="9_1i1yf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6geqq"]
 atlas = ExtResource("1_4oo1y")
@@ -132,26 +128,6 @@ animations = [{
 
 [node name="Node" type="Node"]
 
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "The LEFT Dancing cat is YOU! Move left to right with the arrow keys.
-
-The Dancing cat holds different TheGuy™Orbs ™, which you can drop by pressing [ SPACE ]
-
-Orbs of the same size combine and  form bigger and bigger orbs for more and more points.
-
-There is also an AI cat on the RIGHT who will compete against you
-
-WinState: Get a Higher score than the AI
-
-LoseState: Have an orb above the dotted line for more than 5 seconds (Your character will be deleted, 
-and you need to wait for the AI to finish to see if you got a higher score.
-
-You also have a button called \"Bomb.\" When activated, you can click on a TheGuy™Orb™ to blow it up for points.
-
-"
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(995, 71)
 scale = Vector2(6, 6)
@@ -159,40 +135,59 @@ sprite_frames = SubResource("SpriteFrames_c5uer")
 autoplay = "default"
 
 [node name="HomeScreen" type="Button" parent="."]
-offset_left = 357.0
-offset_top = 393.0
-offset_right = 402.0
-offset_bottom = 424.0
+offset_left = 655.0
+offset_top = 376.0
+offset_right = 710.0
+offset_bottom = 412.0
 scale = Vector2(8.92, 7.56)
+theme_override_font_sizes/font_size = 20
 text = "Back"
 script = ExtResource("2_y1qup")
 
-[node name="RBF1" parent="." instance=ExtResource("3_ycddk")]
-position = Vector2(841, 115)
-gravity_scale = 0.0
-
 [node name="RBF2" parent="." instance=ExtResource("4_snou5")]
-position = Vector2(860, 227)
+position = Vector2(665, 145)
 gravity_scale = 0.0
 
 [node name="RBF3" parent="." instance=ExtResource("5_xv85t")]
-position = Vector2(936, 342)
+position = Vector2(797, 195)
 gravity_scale = 0.0
 
-[node name="RBF4" parent="." instance=ExtResource("6_1wrt6")]
-position = Vector2(1078, 442)
-gravity_scale = 0.0
+[node name="Bg" type="Sprite2D" parent="RBF3"]
+z_index = -1
+position = Vector2(128, -71)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_2fix7")
 
-[node name="RBF5" parent="." instance=ExtResource("7_wjrpe")]
-position = Vector2(912, 547)
-gravity_scale = 0.0
+[node name="RichTextLabe0" type="RichTextLabel" parent="."]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 655.0
+offset_bottom = 645.0
+theme_override_font_sizes/normal_font_size = 29
+theme_override_font_sizes/bold_font_size = 29
+bbcode_enabled = true
+text = "[color=black][b]Controls:[/b] Move left and right with the arrow keys. Press [b]Space[/b] to drop an Orb.
 
-[node name="RBF6" parent="." instance=ExtResource("8_dauds")]
-position = Vector2(242, 570)
-gravity_scale = 0.0
+[b]Combining Orbs:[/b] When two Orbs of the same size touch, they merge into a larger Orb. Bigger Orbs mean more points!
 
-[node name="RBF7" parent="." instance=ExtResource("9_1i1yf")]
-position = Vector2(22, 490)
-gravity_scale = 0.0
+[b]Special Button:[/b] You can click the [b]Bomb[/b] button to clear an Orb for extra points. You can only use this up to [b]5 times[/b], so choose wisely.
+
+[b]Game Over:[/b] The game ends when Orbs pile past the dotted line for [b]both players[/b] (you and the AI). The player with the higher score wins[/color]
+"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 653.0
+offset_bottom = 643.0
+theme_override_font_sizes/normal_font_size = 29
+theme_override_font_sizes/bold_font_size = 29
+bbcode_enabled = true
+text = "[color=white][b]Controls:[/b] Move left and right with the arrow keys. Press [b]Space[/b] to drop an Orb.
+
+[b]Combining Orbs:[/b] When two Orbs of the same size touch, they merge into a larger Orb. Bigger Orbs mean more points!
+
+[b]Special Button:[/b] You can click the [b]Bomb[/b] button to clear an Orb for extra points. You can only use this up to [b]5 times[/b], so choose wisely.
+
+[b]Game Over:[/b] The game ends when Orbs pile past the dotted line for [b]both players[/b] (you and the AI). The player with the higher score wins[/color]
+"
 
 [connection signal="pressed" from="HomeScreen" to="HomeScreen" method="_on_pressed"]

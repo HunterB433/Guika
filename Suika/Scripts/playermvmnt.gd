@@ -86,9 +86,9 @@ func _process(delta: float) -> void:
 		dir = -1
 	if Input.is_action_pressed("ui_right"):
 		dir = 1
-	if(dir == 1 && position.x <= 200):
+	if(dir == 1 && position.x <= 160):
 		position.x += dir * move_speed * delta
-	elif(dir == -1 && position.x >= -385):
+	elif(dir == -1 && position.x >= -360):
 		position.x += dir * move_speed * delta
 	
 	# Clean

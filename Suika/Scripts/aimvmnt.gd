@@ -1,8 +1,8 @@
 extends Node2D
 
 @export var move_speed := 400.0
-@export var min_drop_interval := .1
-@export var max_drop_interval := .2
+@export var min_drop_interval := .8
+@export var max_drop_interval := 1.8
 @export var left_bound := 50
 @export var right_bound := 750
 @export var smooth_factor := 5.0

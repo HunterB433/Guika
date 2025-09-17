@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cs0bv7w1q5uio"]
+[gd_scene load_steps=4 format=3 uid="uid://cs0bv7w1q5uio"]
 
 [ext_resource type="Script" uid="uid://brw1vx3g8mtud" path="res://Suika/Scripts/button.gd" id="1_cs0lr"]
+[ext_resource type="Texture2D" uid="uid://cbigbusbomken" path="res://Suika/Resources/Sprite-0004.png" id="2_c5ksl"]
 
 [sub_resource type="Theme" id="Theme_cs0lr"]
 
@@ -9,24 +10,32 @@
 [node name="SwitchScene" type="Node" parent="."]
 
 [node name="HowTo" type="Button" parent="SwitchScene"]
-offset_left = 108.0
-offset_top = 58.0
-offset_right = 211.0
-offset_bottom = 89.0
-scale = Vector2(8.92, 7.56)
+offset_left = 100.0
+offset_top = 50.0
+offset_right = 1050.0
+offset_bottom = 277.0
+theme_override_font_sizes/font_size = 160
 text = "How To Play
 "
 script = ExtResource("1_cs0lr")
 
+[node name="Bg" type="Sprite2D" parent="SwitchScene/HowTo"]
+z_index = -1
+position = Vector2(48, 1418)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_c5ksl")
+
 [node name="SwitchScene2" type="Node" parent="."]
 
 [node name="main" type="Button" parent="SwitchScene2"]
-offset_left = 120.0
-offset_top = 328.0
-offset_right = 223.0
-offset_bottom = 359.0
-scale = Vector2(8.92, 7.56)
+anchors_preset = -1
+anchor_bottom = -0.106481
+offset_left = 411.0
+offset_top = 338.0
+offset_right = 741.0
+offset_bottom = 634.0
 theme = SubResource("Theme_cs0lr")
+theme_override_font_sizes/font_size = 160
 text = "Play
 "
 script = ExtResource("1_cs0lr")

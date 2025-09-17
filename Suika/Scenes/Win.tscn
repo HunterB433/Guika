@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://krci8vy8ane1"]
+[gd_scene load_steps=5 format=3 uid="uid://krci8vy8ane1"]
 
 [ext_resource type="Texture2D" uid="uid://blfslut3hoen3" path="res://Suika/Resources/Guy Dead.jpg" id="1_2bbp4"]
 [ext_resource type="Script" uid="uid://brw1vx3g8mtud" path="res://Suika/Scripts/button.gd" id="2_4cti7"]
+[ext_resource type="Texture2D" uid="uid://cbigbusbomken" path="res://Suika/Resources/Sprite-0004.png" id="3_sn4co"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4cti7"]
 font_size = 40
@@ -30,5 +31,11 @@ theme_override_font_sizes/font_size = 50
 action_mode = 0
 text = "Click To Return"
 script = ExtResource("2_4cti7")
+
+[node name="Bg" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(894, 185)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_sn4co")
 
 [connection signal="pressed" from="HomeScreen" to="HomeScreen" method="_on_pressed"]
