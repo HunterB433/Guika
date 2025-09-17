@@ -1,17 +1,9 @@
-[ To see the instructions in game, click the How To button ]
+# How to Play
 
-The LEFT Dancing cat is YOU! Move left to right with the arrow keys.
+**Controls:** Move left and right with the arrow keys. Press **Space** to drop an Orb.
 
-The Dancing cat holds different TheGuy™Orbs ™, which you can drop by pressing [ SPACE ]
+**Combining Orbs:** When two Orbs of the same size touch, they merge into a larger Orb. Bigger Orbs mean more points!
 
-Orbs of the same size combine and  form bigger and bigger orbs for more and more points.
+**Special Button:** You can click the **Bomb** button to clear an Orb for extra points. You can only use this up to **5 times**, so choose wisely.
 
-There is also an AI cat on the RIGHT who will compete against you
-
-WinState: Get a Higher score than the AI
-
-LoseState: Have an orb above the dotted line for more than 5 seconds (Your character will be deleted, 
-and you need to wait for the AI to finish to see if you got a higher score.
-
-You also have a button called "Bomb." When activated, you can click on a TheGuy™Orb™ to blow it up for points.
-
+**Game Over:** The game ends when Orbs pile past the dotted line for **both players** (you and the AI). The player with the higher score wins.
